@@ -74,6 +74,34 @@ p {
     margin-top: 200px;
 }
 
+/*CAROUSEL*/
+
+.carousel {
+    grid-column: 1 / 6;
+    grid-row: 4;
+    overflow: hidden;
+    pointer-events: none;
+    margin-top: 180px;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: slide 30s linear infinite;
+}
+
+.tile {
+    width: 340px;
+    height: 340px;
+    background-color: #4A1D24;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
 /*IPHONE*/
 
 @media (max-width: 800px) {
@@ -117,5 +145,14 @@ p {
 
     .introText {
         margin: 50px 16px 0 16px;
+    }
+
+    .carousel {
+        margin-top: 60px;
+    }
+
+    .tile {
+        width: 150px;
+        height: 150px;
     }
 }
