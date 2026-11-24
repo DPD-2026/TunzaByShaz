@@ -2,6 +2,7 @@ body {
     background-color: #EEE2D2;
     color: #4A1D24;
     padding-top: 135px;
+    font-family: "Inter", Arial, sans-serif;
 }
 
 img {
@@ -41,7 +42,48 @@ img {
     font-family: Arial, sans-serif;
     font-size: 18px;
 }
+/*FOOTER*/
 
+.footer {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 200px;
+    padding: 0 100px 100px 136px;
+    font-family: Arial, sans-serif;
+}
+
+.footerName {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footerEmail {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4A1D24;
+    text-decoration: none;
+}
+
+.footerPhone {
+    width: 900px;
+    min-width: 0;
+    margin-left: -100px;
+    margin-bottom: -83px;
+}
+
+.footerSocial {
+    display: flex;
+    gap: 38px;
+    margin-left: -200px;
+    position: relative;
+    top: 15px;
+}
+
+.footerSocial img {
+    width: 40px;
+}
 /*IPHONE*/
 
 @media (max-width: 800px) {
@@ -50,6 +92,7 @@ img {
         padding-top: 70px;
     }
 
+    /*navbar*/
     .navbar {
         height: 70px;
         padding: 0 16px;
@@ -65,5 +108,39 @@ img {
 
     .navLinks a {
         font-size: 13px;
+    }
+
+    /*footer*/
+    .footer {
+        margin-top: 80px;
+        padding: 0 16px 40px 16px;
+    }
+
+    .footerContact {
+        flex-shrink: 0;
+    }
+
+    .footerName {
+        font-size: 3.4vw;
+    }
+
+    .footerEmail {
+        font-size: 2.4vw;
+    }
+
+    .footerPhone {
+        width: 72vw;
+        margin-left: -8vw;
+        margin-bottom: -5vw;
+    }
+
+    .footerSocial {
+        gap: 3vw;
+        margin-left: -17vw;
+        top: 1.5vw;
+    }
+
+    .footerSocial img {
+        width: 4vw;
     }
 }
