@@ -126,7 +126,7 @@ body {
   grid-column: 1;
   justify-self: start;
   width: 120px;
-  padding: 9px 14px;
+  padding: 10px 15px;
   background-color: var(--color-primary-ink);
   color: var(--color-primary-bg);
   border: none;
@@ -143,8 +143,9 @@ body {
 
 /* Teksten under billederne i højre side */
 .product-info {
-  grid-column: 2 / 4;
+  grid-column: 2 / -1;
   width: 100%;
+  max-width: none;
 }
 
 .product-info h2 {
@@ -159,6 +160,7 @@ body {
   font-size: 0.78rem;
   line-height: 1.5;
   width: 100%;
+ max-width: none;
 }
 
 /* Mobil */
