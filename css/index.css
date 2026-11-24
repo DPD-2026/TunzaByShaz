@@ -2,18 +2,8 @@
 
 body {
     margin: 0;
-    background-color: #EEE2D2;
-    color: #4A1D24;
-    font-family: Arial, sans-serif;
-
     display: grid;
     grid-template-columns: 100px minmax(0, 1fr) 100px minmax(0, 1fr) 100px;
-    padding-bottom: 160px;
-}
-
-img {
-    display: block;
-    max-width: 100%;
 }
 
 p {
@@ -28,6 +18,7 @@ p {
     grid-column: 1 / 3;
     grid-row: 1;
     width: 90%;
+    aspect-ratio: 688 / 1032;
     margin-top: 70px;
 }
 
@@ -38,7 +29,9 @@ p {
     align-self: center;
     margin-left: 35%;
     width: 55%;
-    z-index: 1;
+    aspect-ratio: 209 / 60;
+    position: relative;
+    z-index: 11;
 }
 
 /*MADE TO BE DIFFERENT*/
@@ -47,6 +40,7 @@ p {
     grid-column: 1 / 5;
     grid-row: 2;
     width: 85%;
+    aspect-ratio: 1194 / 526;
     margin-top: 150px;
     z-index: 1;
 }
@@ -56,6 +50,7 @@ p {
     grid-row: 2;
     justify-self: end;
     width: 68%;
+    aspect-ratio: 894 / 663;
     margin-top: 250px;
 }
 
@@ -65,6 +60,7 @@ p {
     grid-column: 2;
     grid-row: 3;
     width: 77%;
+    aspect-ratio: 506 / 757;
     margin-top: 200px;
 }
 
@@ -102,13 +98,56 @@ p {
     to   { transform: translateX(-50%); }
 }
 
+/*LOGO ANIMATION*/
+
+@supports (animation-timeline: scroll()) {
+
+    .heroLogo {
+        transform-origin: top left;
+        animation: logoToCorner linear both;
+        animation-timeline: scroll();
+        animation-range: 0 calc(26vw + 115px);
+    }
+
+    .navLogo {
+        opacity: 0;
+        animation: logoIn linear both;
+        animation-timeline: scroll();
+        animation-range: calc(26vw + 95px) calc(26vw + 115px);
+    }
+}
+
+@keyframes logoToCorner {
+    90% {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(calc(-0.35 * (100vw - 200px))) scale(0.3);
+        opacity: 0;
+    }
+}
+
+@keyframes logoToCornerPhone {
+    90% {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(calc(40px - 50vw)) scale(0.52);
+        opacity: 0;
+    }
+}
+
+@keyframes logoIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 /*IPHONE*/
 
 @media (max-width: 800px) {
 
     body {
         display: block;
-        padding-bottom: 40px;
     }
 
     p {
@@ -123,7 +162,13 @@ p {
 
     .heroLogo {
         width: 48%;
-        margin: -42% 0 0 40%;
+        margin: -42% 0 0 50%;
+        animation-name: logoToCornerPhone;
+        animation-range: 0 calc(25vw + 80px);
+    }
+
+    .navLogo {
+        animation-range: calc(25vw + 65px) calc(25vw + 80px);
     }
 
     .differentTitle {
