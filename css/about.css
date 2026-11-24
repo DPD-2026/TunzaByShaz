@@ -93,11 +93,38 @@ p {
     margin-top: 210px;
     margin-bottom: 160px;
 }
+/*CAROUSEL*/
 
+.carousel {
+    grid-column: 1 / 6;
+    grid-row: 6;
+    overflow: hidden;
+    pointer-events: none;
+    margin-top: 100px;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: slide 30s linear infinite;
+}
+
+.carouselTrack img {
+    height: 250px;
+    max-width: none;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
 /*IPHONE*/
 
 @media (max-width: 800px) {
-
+    .carouselTrack img {
+        height: 150px;
+    }
     body {
         display: block;
         padding-bottom: 40px;
