@@ -1,7 +1,15 @@
+/* Navbar logo measurements. css/index.css uses these to make the home page
+   logo animation land exactly on the navbar logo. */
+:root {
+    --navHeight: 135px;
+    --navLogoLeft: 46px;   /* navbar padding (16px) + logo margin (30px) */
+    --navLogoWidth: 210px;
+}
+
 body {
     background-color: #EEE2D2;
     color: #4A1D24;
-    padding-top: 135px;
+    padding-top: var(--navHeight);
     font-family: "Inter", Arial, sans-serif;
 }
 
@@ -17,7 +25,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    height: 135px;
+    height: var(--navHeight);
     padding: 0 16px;
     box-sizing: border-box;
     display: flex;
@@ -32,7 +40,7 @@ img {
 }
 
 .navLogo img {
-    width: 210px;
+    width: var(--navLogoWidth);
 }
 
 .navLinks {
@@ -93,22 +101,19 @@ img {
 
 @media (max-width: 800px) {
 
-    body {
-        padding-top: 70px;
+    :root {
+        --navHeight: 70px;
+        --navLogoLeft: 50px;   /* navbar padding (40px) + logo margin (10px) */
+        --navLogoWidth: 100px;
     }
 
     /*navbar*/
     .navbar {
-        height: 70px;
         padding: 0 16px 0 40px;
     }
 
     .navLogo {
         margin-left: 10px;
-    }
-
-    .navLogo img {
-        width: 100px;
     }
 
     .navLinks {
