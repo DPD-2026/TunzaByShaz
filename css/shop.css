@@ -19,17 +19,18 @@
   padding: 64px 32px 80px;
 }
 /* Navbar cart */
+/* The cart is placed on its own at the far right of the navbar,
+   so ABOUT, LOOKBOOK and SHOP stay in the same place as on the other pages */
 .shop-nav {
-  max-width: var(--max-width, 1120px);
-  margin: 0 auto;
-  padding: 20px 32px 0;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .cart-link {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
   text-decoration: none;
   color: var(--color-primary-ink);
@@ -40,26 +41,22 @@
 }
 
 .cart-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
   border-radius: 999px;
   background-color: var(--color-primary-ink);
-  color: var(--color-primary-bg);
+  color: #EEE2D2;
   font-size: 0.7rem;
   font-weight: 600;
 }
 
 /* Popup toast */
 .cart-toast {
-  position: fixed;
   bottom: 24px;
   right: 24px;
   background-color: var(--color-primary-ink);
-  color: var(--color-primary-bg);
+  color: #EEE2D2;
   padding: 12px 18px;
   font-size: 0.78rem;
   font-weight: 500;
@@ -172,7 +169,7 @@
 
   .product-gallery img {
     width: 100%;
-    height: 100;
+    height: 100%;
     object-fit: cover;
   }
 
