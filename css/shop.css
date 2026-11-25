@@ -1,0 +1,242 @@
+:root {
+  --color-primary-ink: #531b23;
+  --color-accent-pink: #ff0289;
+  --color-accent-orange: #fb6000;
+  --color-accent-aqua: #90d0d4;
+  --color-accent-olive: #95ab1a;
+  --max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 32px 80px;
+}
+/* Navbar cart */
+/* The cart is placed on its own at the far right of the navbar,
+   so ABOUT, LOOKBOOK and SHOP stay in the same place as on the other pages */
+.shop-nav {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cart-link {
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-primary-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.cart-badge {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background-color: var(--color-primary-ink);
+  color: #EEE2D2;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Popup toast */
+.cart-toast {
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-primary-ink);
+  color: #EEE2D2;
+  padding: 12px 18px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.cart-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shop section */
+.shop-section {
+  margin-top: 40px;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 110px;
+  padding-left: 24px;
+}
+
+.product-row:last-child {
+  margin-bottom: 0;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  grid-column: 2 / 4;
+}
+
+.product-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Knappen helt over i venstre side */
+.add-btn {
+  grid-column: 1;
+  justify-self: start;
+  width: 120px;
+  padding: 10px 15px;
+  background-color: var(--color-primary-ink);
+  color:  #EEE2D2;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+ 
+}
+
+.add-btn:hover {
+  opacity: 0.88;
+}
+
+/* Teksten under billederne i højre side */
+.product-info {
+  grid-column: 2 / -1;
+  width: 100%;
+  max-width: none;
+}
+
+.product-info h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.product-info p {
+  font-size: 20px;
+  line-height: 1.7;
+  width: 100%;
+ max-width: none;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .page {
+    padding: 36px 18px 56px;
+  }
+
+  .product-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+    padding-left: 0;
+  }
+
+  .product-gallery {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .add-btn {
+    grid-column: 1;
+    width: 120px;
+  }
+
+  .product-info {
+    grid-column: 1;
+  }
+
+  .product-info p {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 24px 12px 40px;
+  }
+
+  .product-row {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .product-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .add-btn {
+    width: 100px;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+
+  .product-info h2 {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding: 16px 8px 32px;
+  }
+
+  .product-gallery img {
+    height: 180px;
+  }
+
+  .add-btn {
+    width: 90px;
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+
+  .product-info h2 {
+    font-size: 0.7rem;
+  }
+}

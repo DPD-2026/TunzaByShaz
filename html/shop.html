@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../css/common.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUNZA — Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/shop.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <a class="navLogo" href="../index.html"><img src="../images/Common/tunzaLogo.svg" alt="Tunza by Shaz"></a>
+    <div class="navLinks">
+      <a href="about.html">ABOUT</a>
+      <a href="lookbook.html">LOOKBOOK</a>
+      <a class="active" href="shop.html">SHOP</a>
+    </div>
+    <div class="shop-nav">
+      <img src="../images/shopping/shoppingcart.svg" alt="" />
+      <span id="cart-count" class="cart-badge">0</span>
+    </div>
+  </nav>
+  <main class="shop-page">
+    <!-- Produkt 1 -->
+    <article class="product-row">
+      <div class="product-gallery">
+        <img src="../images/shopping/top1.svg" alt="The Reworked Top - front angle" />
+        <img src="../images/shopping/top2.svg" alt="The Reworked Top - back angle" />
+        <img src="../images/shopping/top3.jpg" alt="The Reworked Top - back angle" />
+      </div>
 
+      <button
+        type="button"
+        class="add-btn"
+        data-id="reworked-top"
+        data-name="THE REWORKED TOP"
+        data-price="499"
+      >
+        add to cart
+      </button>
+
+      <div class="product-side">
+        <div class="product-info">
+          <h2>THE REWORKED TOP</h2>
+          <p>
+            Bold, effortless and anything but ordinary. This one-of-a-kind top
+            combines a striking silhouette with unique details, turning a simple
+            wardrobe essential into a statement piece. Crafted from repurposed
+            textiles, it reflects TUNZA's vision of giving forgotten materials a
+            new purpose. Designed to celebrate individuality and creativity, this
+            piece proves that conscious fashion doesn't have to compromise on
+            style.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Produkt 2 -->
+    <article class="product-row">
+      <div class="product-gallery">
+        <img src="../images/shopping/shirt1.svg" alt="The Reworked Shirt - full look" />
+        <img src="../images/shopping/shirt2.svg" alt="The Reworked Shirt - tie detail" />
+        <img src="../images/shopping/shirt3.jpg" alt="The Reworked Shirt - close-up" />
+      </div>
+
+      <button
+        type="button"
+        class="add-btn"
+        data-id="reworked-shirt"
+        data-name="THE REWORKED SHIRT"
+        data-price="599"
+      >
+        add to cart
+      </button>
+
+      <div class="product-side">
+        <div class="product-info">
+          <h2>THE REWORKED SHIRT</h2>
+          <p>
+            A classic silhouette with an unexpected twist. This one-of-a-kind
+            shirt combines a relaxed fit with vibrant patterned details,
+            transforming a timeless wardrobe essential into a bold statement
+            piece. The colorful accents along the collar, sleeves and front add a
+            playful contrast to the dark fabric, creating a look that feels both
+            effortless and expressive.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
+    added to cart
+  </div>
+
+  <script src="../js/shopcart.js"></script>
+  <footer class="footer">
+    <div class="footerContact">
+      <p class="footerName">SHARON SVARRER</p>
+      <a class="footerEmail" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
+    </div>
+    <img class="footerPhone" src="../images/Common/phoneNumber.svg" alt="+45 22 53 70 42">
+    <div class="footerSocial">
+      <a href="https://www.instagram.com/tunza_byshaz/"><img src="../images/Common/instagramLogo.svg" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/tunza-by-shaz/"><img src="../images/Common/linkedinLogo.svg" alt="LinkedIn"></a>
+    </div>
+  </footer>
 </body>
 </html>

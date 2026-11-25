@@ -1,0 +1,209 @@
+/*GENERAL*/
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) 100px minmax(0, 1fr) 100px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/*HERO*/
+
+.heroPhoto {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    width: 90%;
+    aspect-ratio: 688 / 1032;
+    margin-top: 70px;
+}
+
+.heroLogo {
+    grid-column: 2 / 5;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    margin-left: 35%;
+    width: 55%;
+    aspect-ratio: 209 / 60;
+    position: relative;
+    z-index: 11;
+}
+
+/*MADE TO BE DIFFERENT*/
+
+.differentTitle {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    width: 85%;
+    aspect-ratio: 1194 / 526;
+    margin-top: 150px;
+    z-index: 1;
+}
+
+.differentPhoto {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    justify-self: end;
+    width: 68%;
+    aspect-ratio: 894 / 663;
+    margin-top: 250px;
+}
+
+/*INTRODUCTION*/
+
+.introPhoto {
+    grid-column: 2;
+    grid-row: 3;
+    width: 77%;
+    aspect-ratio: 506 / 757;
+    margin-top: 100px;
+}
+
+.introText {
+    grid-column: 3 / 6;
+    grid-row: 3;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: -80px;
+}
+
+/*CAROUSEL*/
+
+.carousel {
+    grid-column: 1 / 6;
+    grid-row: 4;
+    overflow: hidden;
+    pointer-events: none;
+    margin-top: 180px;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: slide 30s linear infinite;
+}
+
+.tile {
+    width: 340px;
+    height: 340px;
+    background-color: #4A1D24;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/*LOGO ANIMATION*/
+
+:root {
+    --heroArea: calc(100vw - 200px);
+    --heroLeft: calc(100px + 0.35 * var(--heroArea));
+    --heroWidth: calc(0.55 * var(--heroArea));
+    --heroRowHeight: calc(70px + 0.675 * (var(--heroArea) + 100px));
+    --heroTop: calc(var(--navHeight) + (var(--heroRowHeight) - var(--heroWidth) * 60 / 209) / 2);
+}
+
+@supports (animation-timeline: scroll()) {
+
+    :root {
+        --navLogoTop: calc((var(--navHeight) - var(--navLogoWidth) * 60 / 209) / 2);
+        --logoEnd: calc(var(--heroTop) - var(--navLogoTop));
+    }
+
+    .heroLogo {
+        transform-origin: top left;
+        animation: logoToNav linear both;
+        animation-timeline: scroll();
+        animation-range: 0 var(--logoEnd);
+    }
+
+    .navLogo {
+        opacity: 0;
+        animation: logoIn linear both;
+        animation-timeline: scroll();
+        animation-range: calc(var(--logoEnd) - 20px) var(--logoEnd);
+    }
+}
+
+@keyframes logoToNav {
+    90% {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(calc(var(--navLogoLeft) - var(--heroLeft)))
+                   scale(tan(atan2(var(--navLogoWidth), var(--heroWidth))));
+        opacity: 0;
+    }
+}
+
+@keyframes logoIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*IPHONE*/
+
+@media (max-width: 800px) {
+
+    :root {
+        --heroLeft: 50vw;
+        --heroWidth: 48vw;
+        --heroTop: calc(var(--navHeight) + 30px + 25.5vw);
+    }
+
+    body {
+        display: block;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .heroPhoto {
+        width: 45%;
+        margin-top: 30px;
+    }
+
+    .heroLogo {
+        width: 48%;
+        margin: -42% 0 0 50%;
+    }
+
+    .differentTitle {
+        width: 79%;
+        margin: 130px 0 0 0;
+        position: relative;
+    }
+
+    .differentPhoto {
+        width: 59%;
+        margin: -28% 6% 0 auto;
+    }
+
+    .introPhoto {
+        float: left;
+        width: 45%;
+        margin: 50px 16px 10px 16px;
+    }
+
+    .introText {
+        margin: 50px 16px 0 16px;
+    }
+
+    .carousel {
+        margin-top: 60px;
+    }
+
+    .tile {
+        width: 150px;
+        height: 150px;
+    }
+}
