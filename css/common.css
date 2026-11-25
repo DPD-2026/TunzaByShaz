@@ -1,8 +1,6 @@
-/* Navbar logo measurements. css/index.css uses these to make the home page
-   logo animation land exactly on the navbar logo. */
 :root {
     --navHeight: 135px;
-    --navLogoLeft: 46px;   /* navbar padding (16px) + logo margin (30px) */
+    --navLogoLeft: 46px;
     --navLogoWidth: 210px;
 }
 
@@ -103,7 +101,7 @@ img {
 
     :root {
         --navHeight: 70px;
-        --navLogoLeft: 50px;   /* navbar padding (40px) + logo margin (10px) */
+        --navLogoLeft: 50px;
         --navLogoWidth: 100px;
     }
 
