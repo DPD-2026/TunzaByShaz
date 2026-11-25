@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TUNZA — Shop</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="../css/common.css" />
   <link rel="stylesheet" href="../css/shop.css" />
 </head>
@@ -18,6 +23,11 @@
     </div>
   </nav>
 
+  <header class="shop-nav">
+    <img src="../images/shopping/shoppingcart.svg" alt="" />
+    <span id="cart-count" class="cart-badge">0</span>
+  </header>
+
   <main class="shop-page">
     <!-- Produkt 1 -->
     <article class="product-row">
@@ -26,9 +36,18 @@
         <img src="../images/shopping/top2.svg" alt="The Reworked Top - back angle" />
         <img src="../images/shopping/top3.jpg" alt="The Reworked Top - back angle" />
       </div>
-  <button type="button" class="add-btn">add to card</button>
+
+      <button
+        type="button"
+        class="add-btn"
+        data-id="reworked-top"
+        data-name="THE REWORKED TOP"
+        data-price="499"
+      >
+        add to cart
+      </button>
+
       <div class="product-side">
-      
         <div class="product-info">
           <h2>THE REWORKED TOP</h2>
           <p>
@@ -49,11 +68,20 @@
       <div class="product-gallery">
         <img src="../images/shopping/shirt1.svg" alt="The Reworked Shirt - full look" />
         <img src="../images/shopping/shirt2.svg" alt="The Reworked Shirt - tie detail" />
-         <img src="../images/shopping/shirt3.jpg" alt="The Reworked Shirt - close-up" />
+        <img src="../images/shopping/shirt3.jpg" alt="The Reworked Shirt - close-up" />
       </div>
-     <button type="button" class="add-btn">add to card</button>
+
+      <button
+        type="button"
+        class="add-btn"
+        data-id="reworked-shirt"
+        data-name="THE REWORKED SHIRT"
+        data-price="599"
+      >
+        add to cart
+      </button>
+
       <div class="product-side">
-   
         <div class="product-info">
           <h2>THE REWORKED SHIRT</h2>
           <p>
@@ -62,13 +90,18 @@
             transforming a timeless wardrobe essential into a bold statement
             piece. The colorful accents along the collar, sleeves and front add a
             playful contrast to the dark fabric, creating a look that feels both
-            effortless and expressive. 
+            effortless and expressive.
           </p>
         </div>
       </div>
     </article>
   </main>
 
+  <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
+    added to cart
+  </div>
+
+  <script src="../js/shopcart.js"></script>
   <footer class="footer">
     <div class="footerContact">
       <p class="footerName">SHARON SVARRER</p>
