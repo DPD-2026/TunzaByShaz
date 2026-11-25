@@ -27,13 +27,18 @@ img {
     z-index: 10;
 }
 
+.navLogo {
+    margin-left: 30px;
+}
+
 .navLogo img {
     width: 210px;
 }
 
 .navLinks {
     display: flex;
-    gap: 140px;
+    gap: 100px;
+    margin-right: 40px;
 }
 
 .navLinks a {
@@ -98,12 +103,17 @@ img {
         padding: 0 16px 0 40px;
     }
 
+    .navLogo {
+        margin-left: 10px;
+    }
+
     .navLogo img {
         width: 100px;
     }
 
     .navLinks {
-        gap: 16px;
+        gap: 12px;
+        margin-right: 10px;
     }
 
     .navLinks a {

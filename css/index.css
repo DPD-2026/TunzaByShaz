@@ -99,40 +99,32 @@ p {
 }
 
 /*LOGO ANIMATION*/
+/* --logoX, --logoY, --logoScale and --logoEnd are measured in js/index.js so the
+   hero logo lands exactly on the navbar logo. The values below are only fallbacks. */
 
 @supports (animation-timeline: scroll()) {
 
     .heroLogo {
         transform-origin: top left;
-        animation: logoToCorner linear both;
+        animation: logoToNav linear both;
         animation-timeline: scroll();
-        animation-range: 0 calc(26vw + 115px);
+        animation-range: 0 var(--logoEnd, calc(26vw + 115px));
     }
 
     .navLogo {
         opacity: 0;
         animation: logoIn linear both;
         animation-timeline: scroll();
-        animation-range: calc(26vw + 95px) calc(26vw + 115px);
+        animation-range: calc(var(--logoEnd, calc(26vw + 115px)) - 20px) var(--logoEnd, calc(26vw + 115px));
     }
 }
 
-@keyframes logoToCorner {
+@keyframes logoToNav {
     90% {
         opacity: 1;
     }
     to {
-        transform: translateX(calc(-0.35 * (100vw - 200px))) scale(0.3);
-        opacity: 0;
-    }
-}
-
-@keyframes logoToCornerPhone {
-    90% {
-        opacity: 1;
-    }
-    to {
-        transform: translateX(calc(40px - 50vw)) scale(0.52);
+        transform: translate(var(--logoX, calc(-0.35 * (100vw - 200px))), var(--logoY, 0px)) scale(var(--logoScale, 0.3));
         opacity: 0;
     }
 }
@@ -163,12 +155,6 @@ p {
     .heroLogo {
         width: 48%;
         margin: -42% 0 0 50%;
-        animation-name: logoToCornerPhone;
-        animation-range: 0 calc(25vw + 80px);
-    }
-
-    .navLogo {
-        animation-range: calc(25vw + 65px) calc(25vw + 80px);
     }
 
     .differentTitle {
