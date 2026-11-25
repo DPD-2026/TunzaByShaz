@@ -92,7 +92,7 @@ p {
 .tile {
     width: 340px;
     height: 340px;
-    background-color: #4A1D24;
+    object-fit: cover;
 }
 
 @keyframes slide {
