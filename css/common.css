@@ -1,7 +1,13 @@
+:root {
+    --navHeight: 135px;
+    --navLogoLeft: 46px;
+    --navLogoWidth: 210px;
+}
+
 body {
     background-color: #EEE2D2;
     color: #4A1D24;
-    padding-top: 135px;
+    padding-top: var(--navHeight);
     font-family: "Inter", Arial, sans-serif;
 }
 
@@ -17,7 +23,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    height: 135px;
+    height: var(--navHeight);
     padding: 0 16px;
     box-sizing: border-box;
     display: flex;
@@ -27,13 +33,18 @@ img {
     z-index: 10;
 }
 
+.navLogo {
+    margin-left: 30px;
+}
+
 .navLogo img {
-    width: 210px;
+    width: var(--navLogoWidth);
 }
 
 .navLinks {
     display: flex;
-    gap: 140px;
+    gap: 100px;
+    margin-right: 40px;
 }
 
 .navLinks a {
@@ -88,22 +99,24 @@ img {
 
 @media (max-width: 800px) {
 
-    body {
-        padding-top: 70px;
+    :root {
+        --navHeight: 70px;
+        --navLogoLeft: 50px;
+        --navLogoWidth: 100px;
     }
 
     /*navbar*/
     .navbar {
-        height: 70px;
         padding: 0 16px 0 40px;
     }
 
-    .navLogo img {
-        width: 100px;
+    .navLogo {
+        margin-left: 10px;
     }
 
     .navLinks {
-        gap: 16px;
+        gap: 12px;
+        margin-right: 10px;
     }
 
     .navLinks a {

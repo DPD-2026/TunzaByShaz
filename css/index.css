@@ -100,39 +100,43 @@ p {
 
 /*LOGO ANIMATION*/
 
+:root {
+    --heroArea: calc(100vw - 200px);
+    --heroLeft: calc(100px + 0.35 * var(--heroArea));
+    --heroWidth: calc(0.55 * var(--heroArea));
+    --heroRowHeight: calc(70px + 0.675 * (var(--heroArea) + 100px));
+    --heroTop: calc(var(--navHeight) + (var(--heroRowHeight) - var(--heroWidth) * 60 / 209) / 2);
+}
+
 @supports (animation-timeline: scroll()) {
+
+    :root {
+        --navLogoTop: calc((var(--navHeight) - var(--navLogoWidth) * 60 / 209) / 2);
+        --logoEnd: calc(var(--heroTop) - var(--navLogoTop));
+    }
 
     .heroLogo {
         transform-origin: top left;
-        animation: logoToCorner linear both;
+        animation: logoToNav linear both;
         animation-timeline: scroll();
-        animation-range: 0 calc(26vw + 115px);
+        animation-range: 0 var(--logoEnd);
     }
 
     .navLogo {
         opacity: 0;
         animation: logoIn linear both;
         animation-timeline: scroll();
-        animation-range: calc(26vw + 95px) calc(26vw + 115px);
+        animation-range: calc(var(--logoEnd) - 20px) var(--logoEnd);
     }
 }
 
-@keyframes logoToCorner {
+@keyframes logoToNav {
     90% {
         opacity: 1;
     }
     to {
-        transform: translateX(calc(-0.35 * (100vw - 200px))) scale(0.3);
-        opacity: 0;
-    }
-}
-
-@keyframes logoToCornerPhone {
-    90% {
-        opacity: 1;
-    }
-    to {
-        transform: translateX(calc(40px - 50vw)) scale(0.52);
+        transform: translateX(calc(var(--navLogoLeft) - var(--heroLeft)))
+                   scale(tan(atan2(var(--navLogoWidth), var(--heroWidth))));
         opacity: 0;
     }
 }
@@ -145,6 +149,12 @@ p {
 /*IPHONE*/
 
 @media (max-width: 800px) {
+
+    :root {
+        --heroLeft: 50vw;
+        --heroWidth: 48vw;
+        --heroTop: calc(var(--navHeight) + 30px + 25.5vw);
+    }
 
     body {
         display: block;
@@ -163,12 +173,6 @@ p {
     .heroLogo {
         width: 48%;
         margin: -42% 0 0 50%;
-        animation-name: logoToCornerPhone;
-        animation-range: 0 calc(25vw + 80px);
-    }
-
-    .navLogo {
-        animation-range: calc(25vw + 65px) calc(25vw + 80px);
     }
 
     .differentTitle {
