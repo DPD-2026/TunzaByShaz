@@ -115,10 +115,14 @@ body {
 
   .look-item img {
     max-width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
 
   .look-item--featured img {
     max-width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
 }
 
@@ -150,13 +154,36 @@ body {
 
   .look-item img {
     max-width: 100%;
+    height: 220px;
+    object-fit: cover;
   }
 
   .look-item--featured img {
     max-width: 100%;
+    height: 220px;
+    object-fit: cover;
   }
 
   .look-item:hover {
     transform: scale(1.05);
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding: 16px 8px 32px;
+  }
+
+  .hero h1 {
+    font-size: 1.1rem;
+  }
+
+  .hero p {
+    font-size: 0.7rem;
+  }
+
+  .look-item img,
+  .look-item--featured img {
+    height: 180px;
   }
 }
