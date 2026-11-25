@@ -12,12 +12,6 @@
   padding: 0;
 }
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -38,8 +32,8 @@ body {
 }
 
 .hero p {
-  font-size: 0.84rem;
-  line-height: 1.55;
+  font-size: 20px;
+  line-height: 1.7;
   color: var(--color-primary-ink);
 }
 
@@ -95,8 +89,8 @@ body {
   }
 
   .hero p {
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.3;
   }
 
   .gallery-section {
@@ -133,11 +127,6 @@ body {
     margin-bottom: 8px;
   }
 
-  .hero p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-
   .gallery-section {
     margin-top: 24px;
     gap: 16px;
@@ -172,10 +161,6 @@ body {
 
   .hero h1 {
     font-size: 1.1rem;
-  }
-
-  .hero p {
-    font-size: 0.7rem;
   }
 
   .look-item img,

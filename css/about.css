@@ -20,7 +20,7 @@ h1 {
 
 p {
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -39,7 +39,7 @@ p {
     grid-row: 2 / 4;
     align-self: end;
     width: 75%;
-    margin-top: 135px;
+    margin-top: 35px;
 }
 
 .withCare {
@@ -53,14 +53,18 @@ p {
 }
 
 .storyTitle {
-    grid-column: 4;
+    grid-column: 3 / 6;
     grid-row: 2;
     align-self: end;
+    margin-right: 50px;
+    margin-left: -80px;
 }
 
 .storyText {
-    grid-column: 4;
+    grid-column: 3 / 6;
     grid-row: 3;
+    margin-right: 50px;
+    margin-left: -80px;
 }
 
 /*ABOUT*/
