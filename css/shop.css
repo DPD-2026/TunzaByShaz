@@ -19,8 +19,6 @@
   padding: 64px 32px 80px;
 }
 /* Navbar cart */
-/* The cart is placed on its own at the far right of the navbar,
-   so ABOUT, LOOKBOOK and SHOP stay in the same place as on the other pages */
 .shop-nav {
   position: absolute;
   right: 8px;
@@ -149,7 +147,6 @@
 }
 
 /* Mobil navbar cart */
-/* On the phone the cart sits in the same row as the links, right after SHOP */
 @media (max-width: 800px) {
   .navLinks {
     margin-left: auto;
